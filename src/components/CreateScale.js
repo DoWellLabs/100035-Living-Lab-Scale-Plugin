@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getScaleData, postResponce } from "../utils/apiRequests";
 import ScaleButton from "./ScaleButton";
-import "./createScale.css";
 import logo from "../assets/logoBlack.png";
 import Button from "./Button";
 import Values from "values.js";
@@ -41,54 +40,63 @@ const CreateScale = () => {
   useEffect(() => {
     setIsFetchingData(true);
     const temp = async () => {
-      const scaleData = await getScaleData(
-        "https://100035.pythonanywhere.com/api/nps_settings/TestSetting4834"
-      );
-      console.log(scaleData.payload);
-      setScaleId(scaleData.payload.data[0]._id);
-      setScaleSettings(scaleData.payload.data[0].settings);
-      setDescription(
-        //dummy description for now update when we have it in db
-        "Based on your exprience of using ICICI Bank's Internet facility, how likely are you to recommand ICICI Bank to your friend, relative or colleague on a scale of 0 to 10?"
-      );
-      setMessage(
-        //dummy message will update once have in db
-        '[10 represents "WIll definitely recommend" and 0 represents "Will not at all recommend"]'
-      );
-      setIsFetchingData(false);
+      try {
+        const scaleData = await getScaleData(
+          "https://100035.pythonanywhere.com/api/nps_settings/TestSetting4834"
+        );
+        console.log(scaleData.payload);
+        setScaleId(scaleData.payload.data[0]._id);
+        setScaleSettings(scaleData.payload.data[0].settings);
+        setDescription(
+          //dummy description for now update when we have it in db
+          "Based on your exprience of using ICICI Bank's Internet facility, how likely are you to recommand ICICI Bank to your friend, relative or colleague on a scale of 0 to 10?"
+        );
+        setMessage(
+          //dummy message will update once have in db
+          '[10 represents "WIll definitely recommend" and 0 represents "Will not at all recommend"]'
+        );
+        console.log("Got Scale Settings.");
+        setIsFetchingData(false);
+      } catch (e) {
+        console.log("Something went wrong!!");
+        setIsFetchingData(false);
+      }
     };
     temp();
   }, []);
 
   //On submit response
   const submitResponse = async (scaleSize) => {
+    if (isLoading) return;
 
-    if(isLoading) return;
-
-    setIsLoading(true);
-    let checkedValue = scaleSize;
-    for (let i = 0; i <= scaleSize; i++) {
-      if (document.getElementById(`${i}`).checked) {
-        checkedValue = i;
+    try {
+      setIsLoading(true);
+      let checkedValue = scaleSize;
+      for (let i = 0; i <= scaleSize; i++) {
+        if (document.getElementById(`${i}`).checked) {
+          checkedValue = i;
+        }
       }
+
+      const responceData = {
+        template_name: scaleSettings.template_name,
+        scale_id: scaleId,
+        instance_id: 3,
+        brand_name: "xyz000",
+        product_name: "xyz000",
+        score: checkedValue,
+        username: "Ahmar",
+      };
+
+      await postResponce(
+        "https://100035.pythonanywhere.com/api/nps_responses_create",
+        responceData
+      );
+      setIsLoading(false);
+    } catch (e) {
+      console.log("Something went wrong!!");
+      setIsLoading(false);
     }
-
-    const responceData = {
-      template_name: scaleSettings.template_name,
-      scale_id: scaleId,
-      instance_id: 2,
-      brand_name: "xyz000",
-      product_name: "xyz000",
-      score: checkedValue,
-      username: "Ahmar",
-    };
-
-    await postResponce(
-      "https://100035.pythonanywhere.com/api/nps_responses_create",
-      responceData
-    );
-
-    setIsLoading(false);
   };
 
   return (
