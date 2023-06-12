@@ -1,10 +1,10 @@
 <?php
 
 /*
-    Plugin Name: Living Lab Scale 1.0
-    Description: Give your rating !!
-    Version: 1.0
-    Author: Fraol
+    Plugin Name: Living_Lab Scale 1.0
+    Description: Hello Everyone Give your rating !!
+    Version: 3.0
+    Author: Fraol B.
 */
 
 if( ! defined( 'ABSPATH' ) ) exit; //exit if accessed directly

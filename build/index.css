@@ -1,0 +1,19 @@
+/*!*******************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/index.css ***!
+  \*******************************************************************************************************************************************************************/
+.top{
+    background-color: rgb(179, 222, 238);
+    color: rgb(6, 6, 6);
+}
+/* .radio-button{
+    border: solid;
+    display: flex;
+    justify-content: center;
+} */
+.radio-button input[type="radio"] {
+    transform: scale(2.5); /* Adjust the scale factor to increase or decrease the size */
+    /* margin-right: 8px;  */
+    /* Optional: Add spacing between the radio button and label */
+  }
+
+/*# sourceMappingURL=index.css.map*/

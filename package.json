@@ -1,0 +1,26 @@
+{
+  "name": "100035-living-lab-scale-plugin",
+  "version": "1.0.0",
+  "description": "This repository serves as LivingLabScales python package and  WordPress plugins .",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoWellLabs/100035-Living-Lab-Scale-Plugin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoWellLabs/100035-Living-Lab-Scale-Plugin/issues"
+  },
+  "homepage": "https://github.com/DoWellLabs/100035-Living-Lab-Scale-Plugin#readme",
+  "dependencies": {
+    "@wordpress/scripts": "^26.6.0",
+    "chroma-js": "^2.4.2"
+  }
+}
