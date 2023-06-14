@@ -4,7 +4,7 @@ This repository serves as the codebase for Dowell living lab scale WordPress plu
 The Branch plugin_dev contains the code for a simple Wrodpress React Plugin. To execute the code you need to follow the following steps.
 
 1. Download WAMP Server and intigrate your own wordpress project.
-2. Make a Pull request from this branch.
+2. Make a Pull request from this branch and place the code in the wordpress plugin folder of your site.
 3. Open the terminal of your editor and Run the following commands to execute the code.
     1. npm install
     2. npm start
