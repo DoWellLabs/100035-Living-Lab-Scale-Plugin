@@ -4,18 +4,18 @@
  * This file will create admin menu page
  */
 
- class WPRK_Create_Admin_Page {
+ class ScalePlugin {
     public function __construct() {
         add_action ('admin_menu', [$this, 'create_admin_menu']);
     }
 
     public function create_admin_menu(){
         $capability = 'manage_options';
-        $slug = 'wprk-settings';
+        $slug = 'scale-plugin-settings';
 
         add_menu_page(
-            __('WP React KickOff', 'wp-react-kickoff'),
-            __('WP React KickOff', 'wp-react-kickoff'),
+            __('Scale Plugin', 'scale-plugin'),
+            __('Scale Plugin', 'scale-plugin'),
             $capability,
             $slug,
             [$this, 'menu_page_template'],
@@ -28,4 +28,4 @@
     }
  }
 
- new WPRK_Create_Admin_Page();
+ new ScalePlugin();

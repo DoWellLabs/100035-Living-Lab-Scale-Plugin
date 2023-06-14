@@ -4,8 +4,8 @@
  * Author: Ali Ahmar
  * Author URI: https://github.com/aliahmarawan8
  * Version: 1.0.0
- * Description: WordPress React Plugin.
- * Text-Domain: wp-react-kickoff
+ * Description: WordPress React Scale Plugin.
+ * Text-Domain: Scale Plugin
  */
 
  if(! defined('ABSPATH') ) : exit(); endif; //No direct Access Allowed
