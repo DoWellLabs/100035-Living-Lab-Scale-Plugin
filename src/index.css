@@ -12,3 +12,7 @@
     /* margin-right: 8px;  */
     /* Optional: Add spacing between the radio button and label */
   }
+
+  .btnSubmit{
+    cursor: pointer;
+  }

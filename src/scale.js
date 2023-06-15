@@ -1,10 +1,9 @@
 import React from "react";
-// import { useState, useEffect } from "react";
 import chroma from "chroma-js";
 import "./index.css";
 
 const Scale = (props) => {
-  //   const [gradientColors, setGradientColors] = useState([]);
+
   var selectedScale;
 
   const colors = [];
@@ -17,15 +16,9 @@ const Scale = (props) => {
     for (let i = 0; i < numColors; i++) {
       colors.push(colorScale[i]);
     }
-
-    // setGradientColors(colors);
   };
 
   generateColors(11, props.color1, props.color2);
-
-  //   useEffect(() => {
-  //     generateColors(10, "#ff0000", "#006622");
-  //   }, []);
 
   const handleScaleSelection = (scale) => {
     selectedScale(scale);
@@ -58,7 +51,7 @@ const Scale = (props) => {
             justifyContent: "center",
             marginTop: "30px",
             marginBottom: "5px",
-            border:'none'
+            border: "none",
           }}
         >
           <input
@@ -71,12 +64,19 @@ const Scale = (props) => {
       </div>
     ));
   };
+  let changer = true;
 
   return (
     <div style={{ display: "flex" }}>
       <div>
-        <div style={{display:"flex"}}>
-          <img src={props.image} width="50px" height="40px" alt="company logo" style={{marginTop: "25px",marginRight:"10px" }}/>
+        <div style={{ display: "flex" }}>
+          <img
+            src={props.image}
+            width="50px"
+            height="40px"
+            alt="company logo"
+            style={{ marginTop: "25px", marginRight: "10px" }}
+          />
           <h3 style={{ marginBottom: "5px", marginTop: "20px" }}>
             {props.textHeader}
           </h3>
@@ -90,43 +90,68 @@ const Scale = (props) => {
           10 represents "will definetly recommend and 0 represents 'will not at
           all recommend'
         </span>
-        <div className="scale-options" style={{ display: "flex" }}>
-          {renderScaleOptions()}
-        </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            paddingLeft: "20px",
-            marginBottom: "20px",
-          }}
-        >
-          <span
-            style={{
-              marginBottom: "20px",
-              fontWeight: "100",
-              fontSize: "12px",
-            }}
-          >
-            Will not <br /> recommend
-          </span>
-          <span
-            style={{
-              marginBottom: "20px",
-              fontWeight: "100",
-              fontSize: "12px",
-            }}
-          >
-            Will definetly
-            <br /> recommend
-          </span>
-        </div>
-        {/* {selectedScale !== null && (
+        <div>
           <div>
-            <h3>Your Selection: {selectedScale}</h3>
-            <p>Thank you for your feedback!!</p>
+            <div>
+              <div className="scale-options" style={{ display: "flex" }}>
+                {renderScaleOptions()}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  paddingLeft: "20px",
+                  marginBottom: "20px",
+                }}
+              >
+                <span
+                  style={{
+                    marginBottom: "20px",
+                    fontWeight: "100",
+                    fontSize: "12px",
+                  }}
+                >
+                  Will not <br /> recommend
+                </span>
+                <span
+                  style={{
+                    marginBottom: "20px",
+                    fontWeight: "100",
+                    fontSize: "12px",
+                  }}
+                >
+                  Will definetly
+                  <br /> recommend
+                </span>
+              </div>
+            </div>
+            <div
+              style={{
+                marginBottom: "20px",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <button
+                className="btnSubmit"
+                style={{
+                  padding: "15px",
+                  paddingLeft: "35px",
+                  paddingRight: "35px",
+                  backgroundColor: colors[5],
+                  color: "white",
+                  fontSize: "16px",
+                  border: "none",
+                }}
+                onClick={
+                  ((changer = false), console.log("the change is ", changer))
+                }
+              >
+                Submit
+              </button>
+            </div>
           </div>
-        )} */}
+        </div>
       </div>
     </div>
   );

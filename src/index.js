@@ -1,9 +1,10 @@
+import React, { useState } from "react";
 import "./index.css";
 import Scale from "./scale";
 
 wp.blocks.registerBlockType("ourplugin/scale-plugin", {
-  title: "Scale Plugin 1.1",
-  icon: "admin-customizer",
+  title: "Scale_Plugin 1.0",
+  icon: "admin-appearance",
   category: "common",
   attributes: {
     textHeader: { type: "string" },
@@ -13,6 +14,7 @@ wp.blocks.registerBlockType("ourplugin/scale-plugin", {
     image: { type: "string" },
   },
   edit: function (props) {
+    const [count, setCount] = useState(0);
     const updateHeader = (e) => {
       props.setAttributes({ textHeader: e.target.value });
     };
@@ -122,37 +124,12 @@ wp.blocks.registerBlockType("ourplugin/scale-plugin", {
       </div>
     );
   },
-  save: function (props) {
-    return (
-      <div style={{ border: "1px solid", padding: "10px" }}>
-        <Scale
-          textHeader={props.attributes.textHeader}
-          textParagraph={props.attributes.textParagraph}
-          color1={props.attributes.colorOne}
-          color2={props.attributes.colorTwo}
-          image={props.attributes.image}
-        />
-      </div>
-    );
+  save:function () {
+    return null;
   },
-  deprecated: [
-    {
-      attributes: {
-        colorOne: { type: "string" },
-        colorTwo: { type: "string" },
-      },
-      save: function (props) {
-        return (
-          <div style={{ border: "1px solid" }}>
-            <Scale
-              textHeader={props.attributes.textHeader}
-              textParagraph={props.attributes.textParagraph}
-              color1={props.attributes.colorOne}
-              color2={props.attributes.colorTwo}
-            />
-          </div>
-        );
-      },
-    },
-  ],
 });
+
+
+const EditFun = (props)=>{
+
+}

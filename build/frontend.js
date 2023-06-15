@@ -154,6 +154,19 @@ const Scale = props => {
 
 /***/ }),
 
+/***/ "./src/frontend.css":
+/*!**************************!*\
+  !*** ./src/frontend.css ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./src/index.css":
 /*!***********************!*\
   !*** ./src/index.css ***!
@@ -175,6 +188,17 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 module.exports = window["React"];
+
+/***/ }),
+
+/***/ "react-dom":
+/*!***************************!*\
+  !*** external "ReactDOM" ***!
+  \***************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["ReactDOM"];
 
 /***/ }),
 
@@ -3853,143 +3877,37 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/*!*************************!*\
+  !*** ./src/frontend.js ***!
+  \*************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
-/* harmony import */ var _scale__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scale */ "./src/scale.js");
+/* harmony import */ var _frontend_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./frontend.css */ "./src/frontend.css");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dom */ "react-dom");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _scale__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scale */ "./src/scale.js");
 
 
 
 
-wp.blocks.registerBlockType("ourplugin/scale-plugin", {
-  title: "Scale_Plugin 1.0",
-  icon: "admin-appearance",
-  category: "common",
-  attributes: {
-    textHeader: {
-      type: "string"
-    },
-    textParagraph: {
-      type: "string"
-    },
-    colorOne: {
-      type: "string"
-    },
-    colorTwo: {
-      type: "string"
-    },
-    image: {
-      type: "string"
-    }
-  },
-  edit: function (props) {
-    const [count, setCount] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0);
-    const updateHeader = e => {
-      props.setAttributes({
-        textHeader: e.target.value
-      });
-    };
-    const updateParagraph = e => {
-      props.setAttributes({
-        textParagraph: e.target.value
-      });
-    };
-    const updateColorOne = e => {
-      props.setAttributes({
-        colorOne: e.target.value
-      });
-    };
-    const updateColorTwo = e => {
-      props.setAttributes({
-        colorTwo: e.target.value
-      });
-    };
-    const updateImage = e => {
-      const file = e.target.files[0];
-      const reader = new FileReader();
-      reader.onload = event => {
-        props.setAttributes({
-          image: event.target.result
-        });
-      };
-      reader.readAsDataURL(file);
-    };
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "top"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      style: {
-        display: "flex",
-        padding: "10px",
-        margin: "10px",
-        justifyContent: "space-between"
-      }
-    }, " ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Insert the image/logo"), " ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-      type: "file",
-      accept: "image/*",
-      onChange: updateImage
-    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      style: {
-        display: "flex",
-        padding: "10px",
-        margin: "10px",
-        justifyContent: "space-between"
-      }
-    }, " ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Insert the text header"), " ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-      type: "text",
-      placeholder: "Text File",
-      value: props.attributes.textHeader,
-      onChange: updateHeader
-    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      style: {
-        display: "flex",
-        padding: "10px",
-        margin: "10px",
-        justifyContent: "space-between"
-      }
-    }, " ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Insert the text paragraph"), " ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-      type: "text",
-      placeholder: "Text File",
-      value: props.attributes.textParagraph,
-      onChange: updateParagraph
-    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      style: {
-        display: "flex",
-        padding: "10px",
-        margin: "10px",
-        justifyContent: "space-between"
-      }
-    }, " ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Insert the first color [Hex value only] Eg. #ff0000"), " ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-      type: "text",
-      placeholder: "color one",
-      value: props.attributes.colorOne,
-      onChange: updateColorOne
-    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      style: {
-        display: "flex",
-        padding: "10px",
-        margin: "10px",
-        justifyContent: "space-between"
-      }
-    }, " ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Insert the second color [Hex value only] Eg. #006622"), " ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-      type: "text",
-      placeholder: "color two",
-      value: props.attributes.colorTwo,
-      onChange: updateColorTwo
-    })));
-  },
-  save: function () {
-    return null;
-  }
+
+const divsToUpdate = document.querySelectorAll(".boilerplate-update-me");
+divsToUpdate.forEach(div => {
+  const data = JSON.parse(div.querySelector("pre").innerText);
+  react_dom__WEBPACK_IMPORTED_MODULE_3___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(OurComponent, data), div);
+  div.classList.remove("boilerplate-update-me");
 });
-const EditFun = props => {};
+function OurComponent(props) {
+  console.log('this is from frontend');
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "boilerplate-frontend"
+  }, props.textHeader);
+}
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=frontend.js.map
