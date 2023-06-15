@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/DoWellLabs/100035-Living-Lab-Scale-Plugin#readme",
   "dependencies": {
+    "axios": "^1.4.0",
     "chroma-js": "^2.4.2"
   },
   "devDependencies": {
