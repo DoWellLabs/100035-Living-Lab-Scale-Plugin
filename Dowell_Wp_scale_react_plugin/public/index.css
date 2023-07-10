@@ -1,0 +1,8 @@
+#wprt-admin-app {
+  height: 248px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
