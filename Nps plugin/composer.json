@@ -1,0 +1,18 @@
+{
+  "name": "dowell/nps-plugin",
+  "description": "Nps plugin for wordpress",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "autoload": {
+    "psr-4": {
+      "dowell\\nps-plugin\\": "includes/"
+    }
+  },
+  "authors": [
+    {
+      "name": "odinakazy",
+      "email": "odinakasolomon4@gmail.com"
+    }
+  ],
+  "require": {}
+}
